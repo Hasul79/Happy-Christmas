@@ -1,0 +1,100 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sevillana'; 
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(blue, #3535ee);
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 190px;
+    background: url(tree.png);
+}
+.container .circle {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    border-radius: 50%;
+}
+.container .circle::before {
+    content: '';
+    position: absolute;
+    inset: -200px -300px;
+    background: url(santa.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    animation: animate 5s ease-in-out infinite;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(-25px);
+    }
+    50% {
+        transform: translateY(25px);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
+.container .circle::after {
+    content: 'Happy Christmas';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color:aliceblue;
+    inset: -60px -200px;
+    font-size: 3em;
+}  
+.container .snow {
+    position: relative;
+    display: flex;
+}
+.container .snow span {
+    position: relative;
+    height: 5px;
+    min-width: 5px;
+    color: #fff;
+    /* border-radius: 50%; */
+    margin: 0 1vw;
+    text-shadow: -100px 20px 5px #fff,
+                 100px 20px 10px #fff;
+    animation: animateS 15s linear infinite;
+    animation-duration: calc(75s / var(--i));
+}
+.container .snow span:nth-child(even) {
+  min-width: 10px;
+  height: 10px;
+}
+@keyframes animateS {
+    0% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+
+}
