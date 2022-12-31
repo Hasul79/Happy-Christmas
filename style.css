@@ -98,3 +98,9 @@ body {
     }
 
 }
+@media screen and (max-width: 600px) {
+    .container .circle::before{
+        background-size: 400px;
+              
+    }
+}
